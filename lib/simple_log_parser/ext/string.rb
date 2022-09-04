@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 
 class String
+  RED_COLOR_CODE = 31
+  YELLOW_COLOR_CODE = 33
+  BLUE_COLOR_CODE = 34
+
   def colorize(color_code)
     "\e[#{color_code}m#{self}\e[0m"
   end
 
   def red
-    colorize(31)
+    colorize(RED_COLOR_CODE)
   end
 
   def yellow
-    colorize(33)
+    colorize(YELLOW_COLOR_CODE)
   end
 
   def blue
-    colorize(34)
+    colorize(BLUE_COLOR_CODE)
   end
 end
