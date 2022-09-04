@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/simple_log_parser'
+
+Dry::CLI.new(SimpleLogParser::CLI::Commands).call

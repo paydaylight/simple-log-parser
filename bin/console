@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'irb'
+
+require_relative '../lib/simple_log_parser'
+
+IRB.start(__FILE__)
