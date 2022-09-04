@@ -10,9 +10,9 @@ RSpec.describe SimpleLogParser::Metrics do
 
   describe '#present_max_views' do
     context 'when store is not empty' do
-      it 'sorts and outputs' do
-        expect { subject.present_max_views }.to output(blue('/about 4') + blue('/index 3')).to_stdout
-      end
+      let(:expected_output) { "#{'/about 4'.blue}\n#{'/index 3'.blue}\n" }
+
+      it('sorts and outputs') { expect { subject.present_max_views }.to output(expected_output).to_stdout }
     end
 
     context 'when store is empty' do
@@ -24,10 +24,9 @@ RSpec.describe SimpleLogParser::Metrics do
 
   describe '#present_unique_views' do
     context 'when store is not empty' do
-      it 'sorts and outputs' do
-        expect { subject.present_unique_views }
-          .to output(blue('/about 2 unique views') + blue('/index 1 unique views')).to_stdout
-      end
+      let(:expected_output) { "#{'/about 2 unique views'.blue}\n#{'/index 1 unique views'.blue}\n" }
+
+      it('sorts and outputs') { expect { subject.present_unique_views }.to output(expected_output).to_stdout }
     end
 
     context 'when store is empty' do
@@ -35,9 +34,5 @@ RSpec.describe SimpleLogParser::Metrics do
 
       it('does not output') { expect { subject.present_unique_views }.to_not output.to_stdout }
     end
-  end
-
-  def blue(text)
-    "#{text.blue}\n"
   end
 end
