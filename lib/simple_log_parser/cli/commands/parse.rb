@@ -12,7 +12,7 @@ module SimpleLogParser
         include Helpers::PrintMetrics
 
         desc 'Parses logs from specified file and presents metrics about max and unique views. ' \
-        'Results are' \
+        'Results are stored in `./tmp/`. ' \
         'Currently supports only PStore manager.'
 
         argument :path, required: true, desc: 'Path to log file'
