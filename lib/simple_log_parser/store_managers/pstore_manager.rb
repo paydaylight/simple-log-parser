@@ -22,13 +22,15 @@ module SimpleLogParser
       end
 
       def call
+        return @call if defined?(@call)
+
         loader.read do |buffer|
           route, ip = parse(buffer)
 
           store.push(route, ip)
         end
 
-        store
+        @call = store
       end
 
       private
