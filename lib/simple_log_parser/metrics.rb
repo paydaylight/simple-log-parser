@@ -20,7 +20,7 @@ module SimpleLogParser
     end
 
     def empty?
-      store.to_h.empty?
+      store.empty?
     end
 
     private

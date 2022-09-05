@@ -38,6 +38,10 @@ module SimpleLogParser
       end
       alias to_h to_hash
 
+      def empty?
+        to_h.empty?
+      end
+
       private
 
       attr_reader :store

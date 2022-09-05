@@ -20,7 +20,7 @@ module SimpleLogParser
         def call(path:, **)
           store_wrapper = SimpleLogParser::Stores::PStoreWrapper.new(store_path: path)
 
-          return if store_wrapper.to_h.empty?
+          return if store_wrapper.empty?
 
           metrics = SimpleLogParser::Metrics.new(store: store_wrapper)
 
